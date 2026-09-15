@@ -1,1 +1,1 @@
-# fyp-docs
+# Final Year Project documentation repo
