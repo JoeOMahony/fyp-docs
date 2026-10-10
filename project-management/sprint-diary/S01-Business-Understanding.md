@@ -11,8 +11,9 @@
 **Priority:** Medium   
 **Semester:** 01   
 ## Daily Log
-### YYYY-MM-DD
-**Done:**    
+### 2026-10-10
+**Done:**  
+Worked on the industry overview with competitors (Flightly, Tripit). Also re-wrote the primary business objective. Added some more secondary business objectives, and began to define business success criteria.
+
 **Next:**   
-**Impediments:**  
-**Decisions:**  
+Complete industry overview with an example of a failed company, and structure the entire section. Review FYP docs to see what else I will need at the start of the report.
