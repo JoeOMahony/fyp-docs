@@ -1,6 +1,6 @@
 # Neon: PostgreSQL backend
 
-Neon is a managed, serverless database platform for PostgreSQL. The core functionality that sets it apart from other relational database providers, like Amazon RDS, is the separation of the storage and compute planes. This leads to features like:
+Neon is a managed, serverless database platform for PostgreSQL, also called Postgres. The core functionality that sets it apart from other relational database providers, like Amazon RDS, is the separation of the storage and compute planes. This leads to features like:
 
 1. Instant database branching using a Copy-on-Write (CoW) storage model, like Docker uses when building images. I'll be able to create a clean branch of the silver layer within a second for testing out data transformations like binning when training.
 2. The ability to instantly restore a database from a snapshot will enable faster development of the silver layer through reducing the time spent rebuilding the database after failed transformation attempts. Without this feature, an expensive connection would need to be established between the silver S3 buckets and Neon.

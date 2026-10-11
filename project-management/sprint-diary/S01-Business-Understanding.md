@@ -17,3 +17,10 @@ Worked on the industry overview with competitors (Flightly, Tripit). Also re-wro
 
 **Next:**   
 Complete industry overview with an example of a failed company, and structure the entire section. Review FYP docs to see what else I will need at the start of the report.
+
+### 2026-10-10
+**Done:**  
+- Completed the industry overview entry for App in the Air.  
+- Put together information around Postgres and the project methodology for the report, I will may need to adapt this for CRISP-DM.
+**Next:**  
+Add some information on pricing and revenue strategy to the industry overview.
