@@ -11,16 +11,36 @@
 **Priority:** Medium   
 **Semester:** 01   
 ## Daily Log
-### 2026-10-10
-**Done:**  
-Worked on the industry overview with competitors (Flightly, Tripit). Also re-wrote the primary business objective. Added some more secondary business objectives, and began to define business success criteria.
+### 2026-10-12    
+**Report Work:**     
+- Polished (shortened) the industry overview entry for App in the Air.  
+- Added a competitor price comparison to the industry overview.
+- Added a flight API price comparison and a section on OpenSky Network API credits to Costs and Benefits.     
 
-**Next:**   
-Complete industry overview with an example of a failed company, and structure the entire section. Review FYP docs to see what else I will need at the start of the report.
+**Non-Report Work:**     
+- Cleaned-up Google Colab.    
+- Experimented with the OpenSky API in a local Jupyter notebook (pushed to repo `fyp-code`).          
 
-### 2026-10-10
-**Done:**  
+*Further details and discussion are available in `diary/2026-10-12.md`*
+
+**Next:**      
+Only 5 days left in the sprint, so concentrate on finishing out the requirements ASAP (especially functional and non-functional requirements).     
+
+---
+
+### 2026-10-11   
+**Done:**     
 - Completed the industry overview entry for App in the Air.  
 - Put together information around Postgres and the project methodology for the report, I will may need to adapt this for CRISP-DM.
-**Next:**  
-Add some information on pricing and revenue strategy to the industry overview.
+
+**Next:**    
+Add some information on pricing and revenue strategy to the industry overview. 
+
+---
+
+### 2026-10-10   
+**Done:**     
+Worked on the industry overview with competitors (Flightly, Tripit). Also re-wrote the primary business objective. Added some more secondary business objectives, and began to define business success criteria.    
+
+**Next:**       
+Complete industry overview with an example of a failed company, and structure the entire section. Review FYP docs to see what else I will need at the start of the report.    
