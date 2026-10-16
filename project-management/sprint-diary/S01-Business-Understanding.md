@@ -10,8 +10,28 @@
 **Effort Size:** XL   
 **Priority:** Medium   
 **Semester:** 01   
-## Daily Log
-### 2026-10-12    
+      
+*Note: this sprint started on the day the proposal was due, i.e., before a project methodology was selected.*    
+## Sprint Log    
+
+### 2026-10-15 / 2026-10-16
+*I didn't update the daily log yesterday as I put it off until I was just too tired. I need to start adding the tasks as I'm doing them, rather than spend a lot of time at the end working backwards.*     
+**Done:**      
+- I added a risk matrix template for the project.
+- As mentioned in the supervisor meeting, I added a line or two on Aeroq's target users and the gap it's filling.
+- I rewrote the primary business objective. Before, it was just a slightly-adapted version of what I said in the proposal.
+- I updated resources with the tools I've started using since the last update.
+- I added a table on the data actually returned by the OpenSky API.
+- I added some academic, functional, and non-functional requirements. These aren't exhaustive, and I may need to refactor later.
+- I added some assumptions and constraints.
+- I added AviationStack to the flight APIs price comparison table.
+
+**Next:**    
+Finish the project risks section and add those risks to the template I made.
+
+---
+
+### 2026-10-12     
 **Report Work:**     
 - Polished (shortened) the industry overview entry for App in the Air.  
 - Added a competitor price comparison to the industry overview.
@@ -31,7 +51,7 @@ Only 5 days left in the sprint, so concentrate on finishing out the requirements
 ### 2026-10-11   
 **Done:**     
 - Completed the industry overview entry for App in the Air.  
-- Put together information around Postgres and the project methodology for the report, I will may need to adapt this for CRISP-DM.
+- Put together information around Postgres and the project methodology for the report, - I will may need to adapt this for CRISP-DM.
 
 **Next:**    
 Add some information on pricing and revenue strategy to the industry overview. 
