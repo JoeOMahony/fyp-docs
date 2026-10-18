@@ -1,11 +1,12 @@
-# Sprint 01: Business Understanding (CDM-01)
+# Sprint 01 Diary: Business Understanding (CDM-01)
 **By:** Joe O'Mahony  
 **Student Number:** 21788075  
 **Module:** Final Year Project 01  
 **Project Name:** Aeroq  
 **Course:** B.Sc. (Hons) Software Systems Development  
 ## Sprint Details
-**Period:** 2026-09-18 -> 2026-10-17  
+**Planned Period:** 2026-09-18 -> 2026-10-17            
+**Actual Period:** 2026-09-18 -> 2026-10-18 (+1 day)         
 **Goal:** Complete the Business Understanding phase of the CRISP-DM. Define the business objectives, assess the current situation, set data-mining goals and develop a project plan.     
 **Effort Size:** XL   
 **Priority:** Medium   
@@ -13,8 +14,18 @@
       
 *Note: this sprint started on the day the proposal was due, i.e., before a project methodology was selected.*    
 ## Sprint Log    
-
 ### 2026-10-18
+**Done:**     
+- Sprint retrospective complete.
+- Added images of the Miro board's current state to docs.
+- Exported my Miro board and added it to the project.
+
+**Not Done:**     
+- Risk matrix, ran out of time.
+
+--- 
+
+### 2026-10-17
 **Done:**     
 - Converted the links in the documents to sources in Word, which can be imported into the real project report.
 - Added the markdown files which are report-centred to the appendix.
