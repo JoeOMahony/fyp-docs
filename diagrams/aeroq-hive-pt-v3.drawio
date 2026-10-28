@@ -1,0 +1,112 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="page-1">
+    <mxGraphModel dx="1059" dy="1101" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Aeroq S3 Bronze Storage Layer&amp;nbsp;&lt;div&gt;Hive-Partitioning Scheme for Object Keys&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="700" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="awc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;" value="&lt;b&gt;AWC API&lt;/b&gt;&lt;br&gt;&lt;small&gt;aviationweather.gov&lt;/small&gt;" vertex="1">
+          <mxGeometry height="60" width="170" x="20" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="lambda" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;labelPerimeter=1;" value="&lt;b&gt;Ingest Lambdas&lt;/b&gt;&lt;br&gt;&lt;small&gt;METAR / TAF / ISIGMET&lt;/small&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="306" y="101" as="geometry" />
+        </mxCell>
+        <mxCell id="bucket" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;labelPerimeter=1;" value="&lt;b&gt;aeroq-data-lake&lt;/b&gt;&lt;br&gt;&lt;small&gt;S3 bucket&lt;/small&gt;" vertex="1">
+          <mxGeometry height="50" width="48" x="516" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="bronze" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="bronze/" vertex="1">
+          <mxGeometry height="40" width="44" x="518" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="awcF" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="awc/" vertex="1">
+          <mxGeometry height="40" width="44" x="518" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="metarF" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="metar/" vertex="1">
+          <mxGeometry height="40" width="44" x="278" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="tafF" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="taf/" vertex="1">
+          <mxGeometry height="40" width="44" x="518" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="isigF" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="isigmet/" vertex="1">
+          <mxGeometry height="40" width="44" x="758" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="metarSt" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="station=&amp;lt;ICAO&amp;gt;/" vertex="1">
+          <mxGeometry height="40" width="44" x="278" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="tafSt" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="station=&amp;lt;ICAO&amp;gt;/" vertex="1">
+          <mxGeometry height="40" width="44" x="518" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="isigDt" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="dt=YYYY-MM-DD/" vertex="1">
+          <mxGeometry height="40" width="44" x="758" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="metarDt" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="dt=YYYY-MM-DD/" vertex="1">
+          <mxGeometry height="40" width="44" x="278" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="tafDt" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;spacingLeft=6;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.folder;labelPerimeter=1;" value="dt=YYYY-MM-DD/" vertex="1">
+          <mxGeometry height="40" width="44" x="518" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="isigObj" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.object;labelPerimeter=1;" value="HHMMSSZ_&amp;lt;RequestID&amp;gt;.json.gz" vertex="1">
+          <mxGeometry height="48" width="48" x="756" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="metarObj" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.object;labelPerimeter=1;" value="HHMMSSZ_&amp;lt;RequestID&amp;gt;.json.gz" vertex="1">
+          <mxGeometry height="48" width="48" x="276" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="tafObj" parent="1" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.object;labelPerimeter=1;" value="HHMMSSZ_&amp;lt;RequestID&amp;gt;.json.gz" vertex="1">
+          <mxGeometry height="48" width="48" x="516" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="eGet" edge="1" parent="1" source="lambda" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;verticalAlign=bottom;defaultLabelBackgroundColor=gap;" target="awc" value="HTTP GET">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ePut" edge="1" parent="1" source="lambda" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;verticalAlign=bottom;defaultLabelBackgroundColor=gap;" target="bucket" value="PutObject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t1" edge="1" parent="1" source="bucket" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="bronze">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t2" edge="1" parent="1" source="bronze" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="awcF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t3" edge="1" parent="1" source="awcF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="metarF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t4" edge="1" parent="1" source="awcF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="tafF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t5" edge="1" parent="1" source="awcF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;exitX=0.5;exitY=1;entryX=0.5;entryY=0;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="isigF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t6" edge="1" parent="1" source="metarF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="metarSt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t7" edge="1" parent="1" source="tafF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="tafSt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t8" edge="1" parent="1" source="isigF" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="isigDt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t9" edge="1" parent="1" source="metarSt" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="metarDt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t10" edge="1" parent="1" source="tafSt" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="tafDt">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t11" edge="1" parent="1" source="isigDt" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="isigObj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t12" edge="1" parent="1" source="metarDt" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="metarObj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="t13" edge="1" parent="1" source="tafDt" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;" target="tafObj">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="keyArrow" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;dashed=1;dashPattern=8 6;strokeColor=#555555;fontColor=#555555;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;labelPlacement=auto;" value="S3 object key">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="200" as="sourcePoint" />
+            <mxPoint x="990" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

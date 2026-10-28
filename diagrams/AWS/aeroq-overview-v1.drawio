@@ -1,0 +1,104 @@
+<mxfile host="Electron">
+  <diagram id="aeroq-aws-overview" name="Page-1">
+    <mxGraphModel dx="900" dy="936" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;" value="Aeroq AWS Architecture for AWC&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;API &lt;/span&gt;METAR/TAF/ISIGMET&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;Ingestion&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="400" x="12" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="awc" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;" value="&lt;b&gt;AWC Data API&lt;/b&gt;&lt;br&gt;&lt;small&gt;aviationweather.gov&lt;br&gt;/api/data &lt;span style=&quot;color: light-dark(rgb(189, 199, 212), rgb(255, 255, 255));&quot;&gt;&lt;font&gt;&lt;span style=&quot;text-wrap-mode: nowrap;&quot;&gt;+&lt;/span&gt;&lt;/font&gt;&amp;nbsp;&lt;/span&gt;/metar /taf /isigmet&lt;/small&gt;" vertex="1">
+          <mxGeometry height="74" width="220" x="450" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud" parent="1" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=14;fontStyle=1;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" value="AWS Cloud" vertex="1">
+          <mxGeometry height="925" width="960" x="40" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="region" parent="cloud" style="outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=14;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#00A4A6;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" value="Region: eu-west-1" vertex="1">
+          <mxGeometry height="865" width="920" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="schedRole" parent="region" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.role;labelPerimeter=1;" value="&lt;b&gt;Scheduler Roles ×3&lt;/b&gt;&lt;br&gt;&lt;small&gt;One per schedule/one per Lambda&lt;br&gt;lambda:InvokeFunction on their own function&lt;/small&gt;" vertex="1">
+          <mxGeometry height="36" width="64" x="120" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="execRole" parent="region" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#DD344C;strokeColor=none;dashed=0;verticalLabelPosition=top;verticalAlign=bottom;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.role;labelPerimeter=1;" value="&lt;b&gt;Execution roles ×3&lt;/b&gt;&lt;br&gt;&lt;small&gt;One per Lambda&lt;br&gt;Lets Lambda write to its own log group&lt;br&gt;s3:PutObject on their own S3 key&lt;/small&gt;" vertex="1">
+          <mxGeometry height="36" width="64" x="720" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="schedGrp" parent="region" style="swimlane;startSize=30;html=1;fontSize=14;fontStyle=1;align=left;spacingLeft=10;fillColor=#FDF2F8;swimlaneFillColor=#FDF2F8;strokeColor=#E7157B;fontColor=#232F3E;collapsible=0;" value="EventBridge Scheduler" vertex="1">
+          <mxGeometry height="380" width="244" x="30" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="sch1" parent="schedGrp" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.eventbridge_scheduler;labelPerimeter=1;" value="&lt;b&gt;aeroq-metar-every-30-min&lt;/b&gt;&lt;br&gt;&lt;small&gt;:05 and :35 past each hour&lt;/small&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="106" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="sch2" parent="schedGrp" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.eventbridge_scheduler;labelPerimeter=1;" value="&lt;b&gt;aeroq-taf-hourly&lt;/b&gt;&lt;br&gt;&lt;small&gt;:10 past each hour&lt;/small&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="106" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="sch3" parent="schedGrp" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.eventbridge_scheduler;labelPerimeter=1;" value="&lt;b&gt;aeroq-isigmet-hourly&lt;/b&gt;&lt;br&gt;&lt;small&gt;:15 past each hour&lt;/small&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="106" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="lambdaGrp" parent="region" style="swimlane;startSize=30;html=1;fontSize=14;fontStyle=1;align=left;spacingLeft=10;fillColor=#FFF4E5;swimlaneFillColor=#FFF4E5;strokeColor=#ED7100;fontColor=#232F3E;collapsible=0;" value="Ingest Lambdas" vertex="1">
+          <mxGeometry height="380" width="260" x="370" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="lam1" parent="lambdaGrp" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;labelPerimeter=1;" value="&lt;b&gt;aeroq-metar-ingest&lt;/b&gt;&lt;br&gt;&lt;small&gt;EIDW / EICK / EINN&lt;/small&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="106" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="lam2" parent="lambdaGrp" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;labelPerimeter=1;" value="&lt;b&gt;aeroq-taf-ingest&lt;/b&gt;&lt;br&gt;&lt;small&gt;EIDW / EICK / EINN&lt;/small&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="106" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="lam3" parent="lambdaGrp" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#ED7100;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.lambda_function;labelPerimeter=1;" value="&lt;b&gt;aeroq-isigmet-ingest&lt;/b&gt;&lt;br&gt;&lt;small&gt;Worldwide (except for&amp;nbsp;&lt;/small&gt;&lt;div&gt;&lt;small&gt;continental U.S.)&lt;/small&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="106" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="region" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;labelPerimeter=1;" value="&lt;b&gt;aeroq-data-lake&lt;/b&gt;&lt;br&gt;&lt;small&gt;S3 bronze layer&lt;br&gt;&lt;/small&gt;" vertex="1">
+          <mxGeometry height="50" width="48" x="800" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="cw" parent="region" style="swimlane;startSize=30;html=1;fontSize=14;fontStyle=1;align=left;spacingLeft=10;fillColor=#FDF2F8;swimlaneFillColor=#FDF2F8;strokeColor=#E7157B;fontColor=#232F3E;collapsible=0;" value="Amazon CloudWatch" vertex="1">
+          <mxGeometry height="165" width="420" x="290" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="logs" parent="cw" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.cloudwatch_logs;labelPerimeter=1;" value="&lt;b&gt;Log groups ×3&lt;/b&gt;&lt;br&gt;&lt;small&gt;One per Lambda&lt;/small&gt;&lt;div&gt;&lt;small&gt;Retained for 1 week&lt;/small&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="36" width="48" x="70" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="alarm" parent="cw" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.alarm;labelPerimeter=1;" value="&lt;b&gt;Alarms ×6&lt;/b&gt;&lt;br&gt;&lt;small&gt;One errors and one missed&lt;br&gt;runs alarm per Lambda&lt;/small&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="300" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="sns" parent="region" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#E7157B;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=14;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.email_notification;labelPerimeter=1;" value="&lt;b&gt;aeroq-alerts&lt;/b&gt;&lt;br&gt;&lt;small&gt;SNS topic messages&lt;/small&gt;&lt;div&gt;&lt;span style=&quot;font-size: 11.6667px;&quot;&gt;trigger email alerts&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="48" width="48" x="830" y="715" as="geometry" />
+        </mxCell>
+        <mxCell id="inv1" edge="1" parent="region" source="sch1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;verticalAlign=bottom;labelPlacement=auto;" target="lam1" value="Invokes...">
+          <mxGeometry relative="1" x="-0.0685" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inv2" edge="1" parent="region" source="sch2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;verticalAlign=bottom;labelPlacement=auto;" target="lam2" value="Invokes...">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inv3" edge="1" parent="region" source="sch3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;verticalAlign=bottom;labelPlacement=auto;" target="lam3" value="Invokes...">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="put" edge="1" parent="region" source="lambdaGrp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;verticalAlign=bottom;labelPlacement=auto;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="s3" value="PutObject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="logsEdge" edge="1" parent="region" source="lambdaGrp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;labelPlacement=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="cw" value="Sends logs and metrics...">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="alarmEdge" edge="1" parent="region" source="alarm" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;verticalAlign=bottom;labelPlacement=auto;" target="sns" value="&lt;div&gt;Publishes &lt;span style=&quot;background-color: transparent;&quot;&gt;alarm&lt;/span&gt;&lt;/div&gt;&lt;div&gt;message...&lt;/div&gt;">
+          <mxGeometry relative="1" x="0.3754" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="asS" edge="1" parent="region" source="schedGrp" style="html=1;dashed=1;strokeColor=#DD344C;fontColor=#DD344C;endArrow=none;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;labelPlacement=auto;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endFill=0;" target="schedRole" value="Grants permissions...">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="asL" edge="1" parent="region" source="lambdaGrp" style="html=1;dashed=1;strokeColor=#DD344C;fontColor=#DD344C;endArrow=none;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;labelPlacement=auto;exitX=1;exitY=0.15;exitDx=0;exitDy=0;startArrow=classic;startFill=1;endFill=0;" target="execRole" value="Grants permissions...">
+          <mxGeometry relative="1" x="0.0985" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="get" edge="1" parent="1" source="lambdaGrp" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#232F3E;endArrow=classic;fontSize=12;labelBackgroundColor=default;defaultLabelBackgroundColor=gap;labelPlacement=auto;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="awc" value="HTTP&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;GET&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(#000000, var(--ge-light-color, #ffffff));&quot;&gt;?format=json&lt;/span&gt;&lt;/div&gt;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
