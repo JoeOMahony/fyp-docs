@@ -1,0 +1,43 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="page-1">
+    <mxGraphModel dx="1031" dy="624" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0" adaptiveColors="auto">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wx" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;Weather Data&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;METAR, TAF, SIGMET&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="180" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fd" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;Flight Data&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;FlightAware AeroAPI&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="420" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fn" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Flight Number&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;Provided by the user&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="aq" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;Aeroq&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Flight delay prediction platform&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="300" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="pr" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#fad7ac;strokeColor=#b46504;" value="&lt;b&gt;Prediction&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;Probability of a delay &amp;gt; 15 min&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="560" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="su" parent="1" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fontFamily=Times New Roman;fontSize=14;fillColor=#fad7ac;strokeColor=#b46504;" value="&lt;b&gt;Subscriber Updates&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;6 h, 3 h, 1 h, 15 min&lt;/font&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="560" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="wx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.3;entryY=0;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fillColor=#f5f5f5;curved=0;" target="aq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="fd" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#666666;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.7;entryY=0;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fillColor=#f5f5f5;curved=0;" target="aq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="fn" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;endArrow=block;endFill=1;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fillColor=#f5f5f5;" target="aq">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="aq" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;endArrow=block;endFill=1;labelBackgroundColor=default;defaultLabelBackgroundColor=page;fillColor=#f5f5f5;" target="pr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="pr" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#5F5E5A;endArrow=block;endFill=1;labelBackgroundColor=default;defaultLabelBackgroundColor=page;" target="su">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
